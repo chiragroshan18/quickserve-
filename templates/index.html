@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Quick Serve — Reliable Local Services Whenever You Need Them{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-badge">⚡ Instant Local Service Dispatch</div>
+      <h1 class="hero-title">Reliable local services, <span>whenever you need them.</span></h1>
+      <p class="hero-desc">
+        Quick Serve connects you with verified local electricians, plumbers, cleaners, and technicians. Select your provider, request service in seconds, and track real-time status.
+      </p>
+      <div class="hero-actions">
+        <a href="/services" class="btn btn-primary btn-lg">Find a Service →</a>
+        <a href="/tracking" class="btn btn-secondary btn-lg">Track Request</a>
+      </div>
+    </div>
+    
+    <div class="hero-graphic">
+      <div style="font-size: 0.85rem; font-weight: 700; color: var(--slate-500); text-transform: uppercase; margin-bottom: 1rem;">Popular On Quick Serve Today</div>
+      <div class="feature-cards-stack">
+        <div class="mini-service-card">
+          <div class="mini-icon">⚡</div>
+          <div style="flex-grow: 1;">
+            <div style="font-weight: 700; font-size: 0.95rem;">Raj Electrical Services</div>
+            <div style="font-size: 0.82rem; color: var(--slate-500);">Available Today • 4.8 ★</div>
+          </div>
+          <div style="font-weight: 800; color: var(--primary);">₹499</div>
+        </div>
+
+        <div class="mini-service-card">
+          <div class="mini-icon">💨</div>
+          <div style="flex-grow: 1;">
+            <div style="font-weight: 700; font-size: 0.95rem;">CoolCare AC Experts</div>
+            <div style="font-size: 0.82rem; color: var(--slate-500);">Available Today • 4.9 ★</div>
+          </div>
+          <div style="font-weight: 800; color: var(--primary);">₹549</div>
+        </div>
+
+        <div class="mini-service-card">
+          <div class="mini-icon">✨</div>
+          <div style="flex-grow: 1;">
+            <div style="font-weight: 700; font-size: 0.95rem;">Sparkle Clean Express</div>
+            <div style="font-size: 0.82rem; color: var(--slate-500);">Available Today • 4.9 ★</div>
+          </div>
+          <div style="font-weight: 800; color: var(--primary);">₹799</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Service Categories -->
+<section style="padding: 5rem 0; background: #fff; border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200);">
+  <div class="container">
+    <div class="center-box">
+      <span class="hero-badge">Browse Categories</span>
+      <h2 class="section-title text-center">What service do you need today?</h2>
+      <p class="section-subtitle text-center">Choose from our verified local service categories with transparent pricing.</p>
+    </div>
+
+    <div class="services-grid" id="services-grid-container">
+      <!-- Populated dynamically via JS API -->
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="/services" class="btn btn-secondary btn-lg">Explore All 8 Categories →</a>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section style="padding: 5rem 0; background: var(--bg-body);">
+  <div class="container">
+    <div class="center-box">
+      <span class="hero-badge">Seamless Experience</span>
+      <h2 class="section-title text-center">How Quick Serve Works</h2>
+      <p class="section-subtitle text-center">Four simple steps from booking your service to completion.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 1rem;">
+      <div class="card text-center">
+        <div style="width: 56px; height: 56px; border-radius: var(--radius-full); background: var(--primary-light); color: var(--primary); font-size: 1.5rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">1</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Select Service</h3>
+        <p style="font-size: 0.9rem; color: var(--slate-500);">Browse electrical, plumbing, cleaning, AC, and appliance repair options.</p>
+      </div>
+
+      <div class="card text-center">
+        <div style="width: 56px; height: 56px; border-radius: var(--radius-full); background: var(--primary-light); color: var(--primary); font-size: 1.5rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">2</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Choose Provider</h3>
+        <p style="font-size: 0.9rem; color: var(--slate-500);">Compare provider ratings, experience, area coverage, and fixed rates.</p>
+      </div>
+
+      <div class="card text-center">
+        <div style="width: 56px; height: 56px; border-radius: var(--radius-full); background: var(--primary-light); color: var(--primary); font-size: 1.5rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">3</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Submit & Track</h3>
+        <p style="font-size: 0.9rem; color: var(--slate-500);">Get an instant Request ID (e.g. QS1001) and follow live visual status updates.</p>
+      </div>
+
+      <div class="card text-center">
+        <div style="width: 56px; height: 56px; border-radius: var(--radius-full); background: var(--primary-light); color: var(--primary); font-size: 1.5rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">4</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Service & Review</h3>
+        <p style="font-size: 0.9rem; color: var(--slate-500);">Service completed at your doorstep. Provide ratings and feedback easily.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section style="padding: 4rem 0; background: var(--primary-gradient); color: #fff;">
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+    <div>
+      <h2 style="font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">Ready to fix your home issues?</h2>
+      <p style="font-size: 1.1rem; opacity: 0.9;">Book top-rated local professionals in less than 60 seconds.</p>
+    </div>
+    <a href="/request" class="btn btn-secondary btn-lg" style="color: var(--primary); border: none; font-weight: 700;">
+      Book Service Now →
+    </a>
+  </div>
+</section>
+{% endblock %}

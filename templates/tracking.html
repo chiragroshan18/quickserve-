@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Track Service Request — Quick Serve{% endblock %}
+
+{% block content %}
+<section style="padding: 4rem 0;">
+  <div class="container">
+    <div class="center-box">
+      <span class="hero-badge">Real-Time Dispatch</span>
+      <h1 class="section-title text-center">Track Request Status</h1>
+      <p class="section-subtitle text-center">Monitor your service request progress from submission to completion.</p>
+    </div>
+
+    <!-- Search Request Box -->
+    <form id="tracking-search-form" class="tracking-search-box">
+      <input type="text" id="tracking-id-input" class="input-field" placeholder="Enter Request ID (e.g. QS1001)" required>
+      <button type="submit" class="btn btn-primary">Track Request</button>
+    </form>
+
+    <!-- Tracking Visual Container -->
+    <div id="tracking-container">
+      <!-- Populated dynamically via app.js -->
+    </div>
+  </div>
+</section>
+{% endblock %}

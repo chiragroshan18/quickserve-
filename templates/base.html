@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Quick Serve — Local Services. Quick Solutions.{% endblock %}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='assets/favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="/" class="brand-logo">
+        <div class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        Quick Serve
+        <span class="brand-tag">Local</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
+        <li><a href="/services" class="nav-link {% if request.path == '/services' %}active{% endif %}">Services</a></li>
+        <li><a href="/providers" class="nav-link {% if request.path == '/providers' %}active{% endif %}">Providers</a></li>
+        <li><a href="/tracking" class="nav-link {% if request.path == '/tracking' %}active{% endif %}">Track Request</a></li>
+        <li><a href="/dashboard" class="nav-link {% if request.path == '/dashboard' %}active{% endif %}">Dashboard</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="/request" class="btn btn-primary">Book a Service</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main style="flex: 1;">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Global Provider Workflow Status Modal -->
+  <div class="modal-overlay" id="status-modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.25rem;">Provider Workflow Action</h3>
+        <button class="modal-close" onclick="closeStatusModal()">&times;</button>
+      </div>
+      <div id="modal-req-info" style="margin-bottom: 1.25rem; font-size: 0.95rem; color: var(--slate-600);"></div>
+      <div id="modal-actions-box"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">Quick Serve</div>
+          <p style="font-size: 0.92rem; color: var(--slate-400); line-height: 1.6; max-width: 340px;">
+            Connecting homeowners and businesses with verified local service professionals for fast, dependable solutions.
+          </p>
+        </div>
+        <div>
+          <div class="footer-title">Platform</div>
+          <ul class="footer-links">
+            <li><a href="/services" class="footer-link">Browse Services</a></li>
+            <li><a href="/providers" class="footer-link">Find Providers</a></li>
+            <li><a href="/request" class="footer-link">Book Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Tracking</div>
+          <ul class="footer-links">
+            <li><a href="/tracking" class="footer-link">Track Request</a></li>
+            <li><a href="/dashboard" class="footer-link">Customer Dashboard</a></li>
+            <li><a href="/dashboard" class="footer-link">Provider Workflow</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Contact & Support</div>
+          <ul class="footer-links">
+            <li style="font-size: 0.9rem;">📍 Chennai</li>
+            <li style="font-size: 0.9rem;">📞 1-8000-XCRUSH</li>
+            <li style="font-size: 0.9rem;">✉️ <a href="mailto:xcrush@quickserve.local" class="footer-link">xcrush@quickserve.local</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 X Crush.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

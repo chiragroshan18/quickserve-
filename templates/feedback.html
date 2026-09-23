@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Submit Customer Feedback — Quick Serve{% endblock %}
+
+{% block content %}
+<section style="padding: 4rem 0;">
+  <div class="container">
+    <div class="center-box">
+      <span class="hero-badge">Quality Assurance</span>
+      <h1 class="section-title text-center">Customer Feedback</h1>
+      <p class="section-subtitle text-center">Rate your completed service experience and leave a review.</p>
+    </div>
+
+    <div class="form-wrapper">
+      <div class="card" style="box-shadow: var(--shadow-lg);">
+        <form id="feedback-form">
+          <div id="feedback-req-info"></div>
+
+          <div class="form-group" style="text-align: center; margin-bottom: 2rem;">
+            <label class="form-label" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Select Rating <span class="req">*</span></label>
+            
+            <input type="hidden" id="feedback-rating" value="0">
+            <div class="star-rating" id="star-rating-box" style="justify-content: center;">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <div class="form-help">Click to rate from 1 (Poor) to 5 (Excellent)</div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 2rem;">
+            <label class="form-label" for="feedback-comment">Your Review / Comments <span class="req">*</span></label>
+            <textarea id="feedback-comment" class="input-field" rows="4" placeholder="Tell us about the provider's punctuality, quality of work, and overall experience..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            Submit Feedback ★
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

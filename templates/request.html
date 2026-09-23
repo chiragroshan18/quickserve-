@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Book a Local Service — Quick Serve{% endblock %}
+
+{% block content %}
+<section style="padding: 4rem 0;">
+  <div class="container">
+    <div class="center-box">
+      <span class="hero-badge">Instant Booking</span>
+      <h1 class="section-title text-center">Submit Service Request</h1>
+      <p class="section-subtitle text-center">Fill out the details below to book a verified provider. Fast dispatch & fixed pricing.</p>
+    </div>
+
+    <div class="form-wrapper">
+      <div class="card" style="box-shadow: var(--shadow-lg);">
+        <form id="service-request-form">
+          <div class="form-grid">
+            
+            <!-- Customer Name -->
+            <div class="form-group">
+              <label class="form-label" for="req-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="req-name" class="input-field" placeholder="e.g. Chirag Sharma" required>
+            </div>
+
+            <!-- Mobile Phone -->
+            <div class="form-group">
+              <label class="form-label" for="req-phone">Mobile Number <span class="req">*</span></label>
+              <input type="tel" id="req-phone" class="input-field" placeholder="e.g. +91 98765 43210" required>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+              <label class="form-label" for="req-email">Email Address <span class="req">*</span></label>
+              <input type="email" id="req-email" class="input-field" placeholder="e.g. chirag@example.com" required>
+            </div>
+
+            <!-- Service Category -->
+            <div class="form-group">
+              <label class="form-label" for="req-service">Service Category <span class="req">*</span></label>
+              <select id="req-service" class="select-field" style="width: 100%;" required>
+                <option value="">Loading services...</option>
+              </select>
+            </div>
+
+            <!-- Provider Selection -->
+            <div class="form-group">
+              <label class="form-label" for="req-provider">Assigned Provider <span class="req">*</span></label>
+              <select id="req-provider" class="select-field" style="width: 100%;" disabled required>
+                <option value="">-- Select Service First --</option>
+              </select>
+            </div>
+
+            <!-- Urgency Level -->
+            <div class="form-group">
+              <label class="form-label" for="req-urgency">Urgency Level</label>
+              <select id="req-urgency" class="select-field" style="width: 100%;">
+                <option value="Standard">Standard (Within 24 Hours)</option>
+                <option value="High">High Urgency (Today)</option>
+                <option value="Emergency">Emergency (Immediate)</option>
+              </select>
+            </div>
+
+            <!-- Preferred Date -->
+            <div class="form-group">
+              <label class="form-label" for="req-date">Preferred Date <span class="req">*</span></label>
+              <input type="date" id="req-date" class="input-field" required>
+            </div>
+
+            <!-- Preferred Time -->
+            <div class="form-group">
+              <label class="form-label" for="req-time">Preferred Time Slot <span class="req">*</span></label>
+              <input type="time" id="req-time" class="input-field" required>
+            </div>
+
+            <!-- Service Address -->
+            <div class="form-group full-width">
+              <label class="form-label" for="req-address">Full Service Address <span class="req">*</span></label>
+              <textarea id="req-address" class="input-field" rows="2" placeholder="House/Flat No, Apartment, Street Name, Area, City" required></textarea>
+            </div>
+
+            <!-- Problem Description -->
+            <div class="form-group full-width">
+              <label class="form-label" for="req-description">Problem Description <span class="req">*</span></label>
+              <textarea id="req-description" class="input-field" rows="3" placeholder="Describe the service issue or task in detail..." required></textarea>
+            </div>
+
+          </div>
+
+          <!-- Price Summary & Submit -->
+          <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--slate-200); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span style="font-size: 0.85rem; color: var(--slate-500); font-weight: 600;">ESTIMATED BASE CHARGE</span>
+              <div id="estimated-price-display" style="font-size: 1.75rem; font-weight: 800; color: var(--primary);">₹0</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">
+              Confirm & Submit Request →
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

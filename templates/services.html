@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Service Categories — Quick Serve{% endblock %}
+
+{% block content %}
+<section style="padding: 4rem 0;">
+  <div class="container">
+    <div class="center-box">
+      <span class="hero-badge">Browse Catalog</span>
+      <h1 class="section-title text-center">Service Categories</h1>
+      <p class="section-subtitle text-center">Explore all available local service categories. Select a service to view providers.</p>
+    </div>
+
+    <div class="services-grid" id="services-grid-container">
+      <!-- Populated dynamically via app.js API call -->
+    </div>
+  </div>
+</section>
+{% endblock %}

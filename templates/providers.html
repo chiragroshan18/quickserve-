@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Local Service Providers — Quick Serve{% endblock %}
+
+{% block content %}
+<section style="padding: 4rem 0;">
+  <div class="container">
+    <div class="center-box">
+      <span class="hero-badge">Verified Experts</span>
+      <h1 class="section-title text-center">Service Providers</h1>
+      <p class="section-subtitle text-center">Find and compare top-rated local professionals near your area.</p>
+    </div>
+
+    <!-- Client-Side Filter Bar -->
+    <div class="filter-bar">
+      <div class="search-input-group">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-provider" class="input-field input-field-icon" placeholder="Search provider name, service or area...">
+      </div>
+
+      <div class="filter-selects">
+        <select id="filter-service" class="select-field">
+          <option value="">All Service Categories</option>
+        </select>
+
+        <select id="filter-rating" class="select-field">
+          <option value="">All Ratings</option>
+          <option value="4.8">4.8★ and above</option>
+          <option value="4.5">4.5★ and above</option>
+          <option value="4.0">4.0★ and above</option>
+        </select>
+
+        <select id="filter-availability" class="select-field">
+          <option value="">Any Availability</option>
+          <option value="today">Available Today</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Providers Cards Grid -->
+    <div class="providers-grid" id="providers-grid-container">
+      <!-- Populated dynamically via app.js -->
+    </div>
+  </div>
+</section>
+{% endblock %}
